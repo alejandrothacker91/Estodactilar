@@ -15,7 +15,7 @@ class Boid {
   float maxspeed;    // Maximum speed
 
   float z=0.0;
-  int maxZ=10;
+  int maxZ=100;
   /*
   Boid(float x, float y) {
    acceleration = new PVector(0, 0);
@@ -90,15 +90,20 @@ class Boid {
 
   void render() {
     // Draw a triangle rotated in the direction of velocity
-    float theta = velocity.heading() + radians(90);
+
+    //float theta = velocity.heading() + radians(90);
+
     fill(175);
     stroke(0);
     pushMatrix();
     translate(position.x, position.y, position.z);
-    float rho = sqrt((position.x*position.x) + (position.y*position.y)+(position.z*position.z));
-    float phi = acos(position.z/rho);
+    float rho=position.mag();
 
-    rotate(theta);
+    float phi = acos(position.z/rho)+radians(90);
+    float theta = atan(position.y/position.x)-radians(90);
+
+    rotateZ(theta);
+    rotateY(phi);
     beginShape(TRIANGLES);
     vertex(0, -r*2, 0);
     vertex(-r, r*2, 0);
