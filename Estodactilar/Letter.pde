@@ -16,6 +16,10 @@ class Letter {
     //print(acter);
   }
   void display() {
-    ellipse(letX, letY, charSize, charSize);
+    //ellipse(letX, letY, charSize, charSize);
+    pushMatrix();
+    translate(letX, letY, 0);
+    text(acter, 0, 0, 0);
+    popMatrix();
   }
 } 

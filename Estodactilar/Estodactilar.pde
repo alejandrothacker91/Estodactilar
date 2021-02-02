@@ -8,6 +8,7 @@ void settings() {
 void setup() {
   winSetup();
   calcConfig();
+  setupFont();
   loadText();
 }
 

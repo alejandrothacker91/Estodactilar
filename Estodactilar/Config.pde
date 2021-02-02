@@ -21,8 +21,13 @@ int lineSpace;
 int marginX;
 int marginY;
 
+//
+
 int maxLines;
 int maxLetters;
+
+//
+PFont f;
 
 boolean loadConfig() {
 
@@ -69,7 +74,7 @@ void calcConfig() {
 
   maxLines=floor(safeY/(charSize+lineSpace));
   println("Max Lines:  "+maxLines);
-  
+
   maxLetters=floor(safeX/(charSize+charSpace));
   println("Max Letters:  "+maxLetters);
 }
@@ -84,4 +89,10 @@ void winSetup() {
   surface.setAlwaysOnTop(true);
   surface.setResizable(false);
   frameRate(fps);
+}
+
+void setupFont() {
+  f = createFont("SourceCodePro-Regular.ttf", charSize, true);
+  textFont(f);
+  textAlign(CENTER, CENTER);
 }
