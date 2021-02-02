@@ -58,14 +58,15 @@ class Boid {
     PVector ali = align(boids);      // Alignment
     PVector coh = cohesion(boids);   // Cohesion
     // Arbitrarily weight these forces
-    sep.mult(1.5*freedom);
+    sep.mult(2.5*freedom);
     ali.mult(1.0*freedom);
-    coh.mult(0.50*freedom);
+    coh.mult(0.250*freedom);
 
     // Add the force vectors to acceleration
+
     applyForce(sep);
     applyForce(ali);
-    //applyForce(coh);
+    applyForce(coh);
   }
 
   // Method to update position
