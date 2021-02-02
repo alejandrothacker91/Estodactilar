@@ -1,3 +1,5 @@
+ArrayList<Line> particles = new ArrayList<Line>();
+
 void settings() {
   loadConfig();
   setWindow();
@@ -5,6 +7,7 @@ void settings() {
 
 void setup() {
   winSetup();
+  loadText();
 }
 
 void draw() {
@@ -17,4 +20,13 @@ void setWindow() {
   } else {
     size(resX, resY, P3D);
   }
+}
+
+void loadText() {
+  String[] rawLines = loadStrings("story.txt");
+  for (int i=0; i<rawLines.length; i++) {
+    println(rawLines[i]);
+  }
+
+  //printArray(lines);
 }

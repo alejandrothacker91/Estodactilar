@@ -1,2 +1,2 @@
-<config fullscreen="0" spouty="0" fullDisp="2" resX="1280" resY="720" viewportX="100" viewportY="100" fps="60.0" charSize="20" charSpace="10" wordSpace="50">
+<config fullscreen="0" spouty="0" fullDisp="2" resX="1280" resY="720" viewportX="0" viewportY="1080" fps="60.0" charSize="20" charSpace="10" wordSpace="50">
 </config>

@@ -38,6 +38,7 @@ boolean loadConfig() {
 
     charSize=config.getInt("charSize", 20);
     charSpace=config.getInt("charSpace", 10);
+    
     wordSpace=config.getInt("wordSpace", 50);
 
     return false;
