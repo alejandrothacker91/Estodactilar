@@ -13,8 +13,8 @@ void draw() {
 
 void setWindow() {
   if (fullScr) {
-    fullScreen();
+    fullScreen(P3D, fullDisp);
   } else {
-    size(resX, resY);
+    size(resX, resY, P3D);
   }
 }

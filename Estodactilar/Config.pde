@@ -33,7 +33,7 @@ boolean loadConfig() {
     vpX=config.getInt("viewportX", 0);
     vpY=config.getInt("viewportY", 0);
 
-    fps=config.getFloat("fps", 30.0);
+    fps=config.getFloat("fps", 60.0);
 
 
     charSize=config.getInt("charSize", 20);
@@ -48,9 +48,13 @@ boolean loadConfig() {
 }
 
 void winSetup() {
-  surface.setLocation(vpX, vpY);
+  if (!fullScr) {
+    surface.setLocation(vpX, vpY);
+  }
+
   surface.setResizable(false);
   surface.setTitle("Estodactilae");
   surface.setAlwaysOnTop(true);
   surface.setResizable(false);
+  frameRate(fps);
 }
