@@ -25,7 +25,7 @@ void draw() {
 }
 
 void updateFreedom() {
-  freedom=map(mouseX, marginX, width-marginX, 0.0, 1.0);
+  freedom=map(mouseX, marginX, width-marginX, 1.0, 0.0);
   freedom=constrain(freedom, 0.0, 1.0);
 }
 

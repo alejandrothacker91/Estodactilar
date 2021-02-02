@@ -21,7 +21,7 @@ class Boid {
     acceleration = new PVector(0, 0);
     velocity = new PVector(random(-1, 1), random(-1, 1));
 
-    position = new PVector(x, y);
+    position = new PVector(random(0, width), random(0, height));
     r = 3.0;
     maxspeed = 3;
     maxforce = 0.05;
@@ -58,13 +58,13 @@ class Boid {
     PVector ali = align(boids);      // Alignment
     PVector coh = cohesion(boids);   // Cohesion
     // Arbitrarily weight these forces
-    sep.mult(1.5);
-    ali.mult(1.0);
-    coh.mult(1.0);
+    sep.mult(1.5*freedom);
+    ali.mult(1.0*freedom);
+    coh.mult(0.50*freedom);
 
     // Add the force vectors to acceleration
-    //applyForce(sep);
-    //applyForce(ali);
+    applyForce(sep);
+    applyForce(ali);
     //applyForce(coh);
   }
 
