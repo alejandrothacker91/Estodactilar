@@ -21,11 +21,27 @@ class Line {
     wordArray=split(input, ' ');
     //printArray(wordArray);
 
+    int charCount=0;
     for (int i=0; i<wordArray.length; i++) {
-      Words.add(new Word(wordArray[i]));
+      Words.add(new Word(i, lineY, wordArray[i]));
+    }
+  }
+  Line (int x, int y, String input) {
+    lineX=x;
+    lineY=y;
+
+    wordArray=split(input, ' ');
+    //printArray(wordArray);
+
+    int charCount=0;
+    for (int i=0; i<wordArray.length; i++) {
+      Words.add(new Word(lineX+charCount, lineY, wordArray[i]));
     }
   }
   void display() {
-    ellipse(lineX, lineY, charSize, charSize);
+    //ellipse(lineX, lineY, charSize, charSize);
+    for (int i=0; i<Words.size(); i++) {
+      Words.get(i).display();
+    }
   }
 } 

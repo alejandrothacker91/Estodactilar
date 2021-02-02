@@ -13,7 +13,7 @@ void setup() {
 
 void draw() {
   background(0);
-  runLines();
+  dispLines();
 }
 
 void setWindow() {
@@ -27,7 +27,7 @@ void setWindow() {
 void loadText() {
   String[] rawLines = loadStrings("story.txt");
   for (int i=0; i<rawLines.length; i++) {
-    Lines.add(new Line(i, rawLines[i]));
+    Lines.add(new Line(marginX, marginY+i*(charSize+lineSpace), rawLines[i]));
 
     //println("Line " +i+ " added");
     //println(rawLines[i]);
@@ -36,7 +36,7 @@ void loadText() {
   //printArray(lines);
 }
 
-void runLines() {
+void dispLines() {
   for (int i=0; i<Lines.size(); i++) {
     Lines.get(i).display();
   }
