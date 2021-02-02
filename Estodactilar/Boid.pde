@@ -41,7 +41,7 @@ class Boid {
 
   void run(ArrayList<Boid> boids) {
     flock(boids);
-    //arrive(mouse);
+    arrive(origin);
     update();
     borders();
     render();
@@ -61,10 +61,11 @@ class Boid {
     sep.mult(1.5);
     ali.mult(1.0);
     coh.mult(1.0);
+
     // Add the force vectors to acceleration
-    applyForce(sep);
-    applyForce(ali);
-    applyForce(coh);
+    //applyForce(sep);
+    //applyForce(ali);
+    //applyForce(coh);
   }
 
   // Method to update position
@@ -92,6 +93,15 @@ class Boid {
   }
 
   void render() {
+    // Draw a triangle rotated in the direction of velocity
+    float theta = velocity.heading2D() + radians(90);
+    pushMatrix();
+    translate(position.x, position.y);
+    //rotate(theta);
+    text(letter, 0, 0, 0);
+    popMatrix();
+  }
+  void render0() {
     // Draw a triangle rotated in the direction of velocity
     float theta = velocity.heading2D() + radians(90);
     fill(175);

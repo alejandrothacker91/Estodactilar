@@ -17,6 +17,8 @@ class Letter {
     flock.addBoid(new Boid(x, y, acter));
   }
   void display() {
+  }
+  void display0() {
     pushMatrix();
     translate(letX, letY, 0);
     text(acter, 0, 0, 0);
