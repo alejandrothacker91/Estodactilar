@@ -1,4 +1,4 @@
-ArrayList<Line> particles = new ArrayList<Line>();
+ArrayList<Line> Lines = new ArrayList<Line>();
 
 void settings() {
   loadConfig();
@@ -25,7 +25,10 @@ void setWindow() {
 void loadText() {
   String[] rawLines = loadStrings("story.txt");
   for (int i=0; i<rawLines.length; i++) {
-    println(rawLines[i]);
+    Lines.add(new Line(rawLines[i]));
+
+    println("Line " +i+ " added");
+    //println(rawLines[i]);
   }
 
   //printArray(lines);
