@@ -20,13 +20,10 @@ class Word {
 
     //println(input);
     for (int i=0; i<input.length(); i++) {
-      if (i==0) {
-        Letters.add(new Letter(wordX+charSpace+i*charSize, wordY, input.charAt(i)));
-      } else {  
-        Letters.add(new Letter(wordX+charSpace+i*charSize, wordY, input.charAt(i)));
-      }
+
+      //Letters.add(new Letter(wordX+charSpace+i*charSize, wordY, input.charAt(i)));
+      Letters.add(new Letter(wordX+i*charSpace, wordY, input.charAt(i)));
     }
-    //println("*");
   }
   void display() {
     //ellipse(wordX, wordY, charSize, charSize);

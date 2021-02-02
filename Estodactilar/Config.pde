@@ -52,6 +52,7 @@ boolean loadConfig() {
 
     charSpace=config.getInt("charSpace", 10);
     wordSpace=config.getInt("wordSpace", 50);
+    println("WordSpace loaded to:  "+wordSpace);
     lineSpace=config.getInt("lineSpace", 50);
 
     marginX=config.getInt("marginX", 100);
