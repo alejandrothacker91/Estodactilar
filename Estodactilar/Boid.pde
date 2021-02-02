@@ -31,7 +31,6 @@ class Boid {
   Boid(float x, float y, float z) {
     acceleration = new PVector(0, 0, 0);
     velocity = new PVector(random(-1, 1), random(-1, 1), random(-1, 1));
-    //velocity = new PVector(random(-1, 1), random(-1, 1), 0);
     position = new PVector(x, y, z);
     r = 3.0;
     maxspeed = 3;
@@ -92,77 +91,12 @@ class Boid {
   void render() {
     // Draw a triangle rotated in the direction of velocity
 
-    //float theta = velocity.heading2D() + radians(90);
-
-    fill(175);
-    stroke(0);
-    pushMatrix();
-
-    translate(position.x, position.y, position.z);
-
-    //rotate(theta);
-    /*
-    beginShape(TRIANGLES);
-     vertex(0, -r*2);
-     vertex(-r, r*2);
-     vertex(r, r*2);
-     endShape();
-     */
-    //
-    rotateX(-PI/2.0f);
-    
-    float rho=position.mag();
-
-    float phi = acos(position.z/rho)-radians(90);
-    float theta = atan(position.y/position.x)-radians(45);
-
-    rotateZ(theta);
-    rotateY(phi);
-    
-    shape(arrow);
-
-    popMatrix();
-  }
-  void render1() {
-    // Draw a triangle rotated in the direction of velocity
-
-    float theta = velocity.heading2D() + radians(90);
-
-    fill(175);
-    stroke(0);
-    pushMatrix();
-
-    translate(position.x, position.y);
-
-    rotate(theta);
-    /*
-    beginShape(TRIANGLES);
-     vertex(0, -r*2);
-     vertex(-r, r*2);
-     vertex(r, r*2);
-     endShape();
-     */
-    //
-    rotateX(PI/2.0f);
-    //rotateZ(PI/2.0f);
-
-    //    translate(0, 0, 0);
-    shape(arrow);
-
-    popMatrix();
-  }
-
-
-  void render0() {
-    // Draw a triangle rotated in the direction of velocity
-
     //float theta = velocity.heading() + radians(90);
 
     fill(175);
     stroke(0);
     pushMatrix();
     translate(position.x, position.y, position.z);
-    
     float rho=position.mag();
 
     float phi = acos(position.z/rho)+radians(90);
@@ -170,7 +104,6 @@ class Boid {
 
     rotateZ(theta);
     rotateY(phi);
-    
     beginShape(TRIANGLES);
     vertex(0, -r*2, 0);
     vertex(-r, r*2, 0);

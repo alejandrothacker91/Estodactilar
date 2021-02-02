@@ -9,17 +9,12 @@
 // Click mouse to add boids into the system
 
 Flock flock;
-PShape arrow;
 
 void setup() {
   size(640, 360, P3D);
   flock = new Flock();
-
-  arrow = loadShape("rocket.obj");
-  arrow.scale(3.0);
-
   // Add an initial set of boids into the system
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 200; i++) {
     Boid b = new Boid(width/2, height/2, 0);
     flock.addBoid(b);
   }
