@@ -7,7 +7,7 @@ class Line {
     //printArray(wordArray);
 
     for (int i=0; i<wordArray.length; i++) {
-      Words.add(new Word(""));
+      Words.add(new Word(wordArray[i]));
     }
   }
   void update() {
