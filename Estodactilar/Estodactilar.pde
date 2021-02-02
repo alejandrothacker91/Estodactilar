@@ -28,7 +28,7 @@ void loadText() {
   for (int i=0; i<rawLines.length; i++) {
     Lines.add(new Line(rawLines[i]));
 
-    println("Line " +i+ " added");
+    //println("Line " +i+ " added");
     //println(rawLines[i]);
   }
 

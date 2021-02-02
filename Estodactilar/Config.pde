@@ -60,11 +60,18 @@ boolean loadConfig() {
 }
 
 void calcConfig() {
-  int safeY=height-2*marginY;
-  println("Safe Height:  "+safeY);
 
   int safeX=width-2*marginX;
   println("Safe Width:  "+safeX);
+
+  int safeY=height-2*marginY;
+  println("Safe Height:  "+safeY);
+
+  maxLines=floor(safeY/(charSize+lineSpace));
+  println("Max Lines:  "+maxLines);
+  
+  maxLetters=floor(safeX/(charSize+charSpace));
+  println("Max Letters:  "+maxLetters);
 }
 
 void winSetup() {
