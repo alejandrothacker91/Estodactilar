@@ -12,6 +12,7 @@ class Letter {
   Letter (int x, int y, char input) {
     letX=x;
     letY=y;
+    
     acter=input;
     //print(acter);
   }
