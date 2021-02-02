@@ -1,8 +1,8 @@
 class Line {
-  
+
   int lineX;
   int lineY;
-  
+
   ArrayList<Word> Words = new ArrayList<Word>();
   String[] wordArray;
 
@@ -14,6 +14,18 @@ class Line {
       Words.add(new Word(wordArray[i]));
     }
   }
-  void update() {
+  Line (int y, String input) {
+    lineX=marginX;
+    lineY=marginY+y*(charSize+lineSpace);
+
+    wordArray=split(input, ' ');
+    //printArray(wordArray);
+
+    for (int i=0; i<wordArray.length; i++) {
+      Words.add(new Word(wordArray[i]));
+    }
+  }
+  void display() {
+    ellipse(lineX, lineY, charSize, charSize);
   }
 } 
