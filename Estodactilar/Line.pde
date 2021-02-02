@@ -1,4 +1,8 @@
 class Line {
+  
+  int lineX;
+  int lineY;
+  
   ArrayList<Word> Words = new ArrayList<Word>();
   String[] wordArray;
 

@@ -17,6 +17,9 @@ int charSize;
 int charSpace;
 int wordSpace;
 
+int marginX;
+int marginY;
+
 boolean loadConfig() {
 
   config = loadXML("config.xml");
@@ -40,6 +43,10 @@ boolean loadConfig() {
     charSpace=config.getInt("charSpace", 10);
     
     wordSpace=config.getInt("wordSpace", 50);
+    
+    marginX=config.getInt("marginX", 100);
+    marginY=config.getInt("marginY", 100);
+    println(marginX);
 
     return false;
   } else {

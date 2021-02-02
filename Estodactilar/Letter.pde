@@ -1,5 +1,8 @@
 class Letter {
 
+  int letX;
+  int letY;
+
   char acter;
 
   Letter (char input) {

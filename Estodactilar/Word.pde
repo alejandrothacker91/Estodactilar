@@ -1,4 +1,7 @@
 class Word {
+  
+  int wordX;
+  int wordY;
 
   ArrayList<Letter> Letters = new ArrayList<Letter>();
 
