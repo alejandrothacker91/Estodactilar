@@ -7,6 +7,7 @@ void settings() {
 
 void setup() {
   winSetup();
+  calcConfig();
   loadText();
 }
 

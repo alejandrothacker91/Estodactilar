@@ -7,7 +7,7 @@ class Letter {
 
   Letter (char input) {
     acter=input;
-    print(acter);
+    //print(acter);
   }
   void update() {
   }

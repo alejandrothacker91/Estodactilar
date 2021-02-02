@@ -16,9 +16,13 @@ boolean spouty=false;
 int charSize;
 int charSpace;
 int wordSpace;
+int lineSpace;
 
 int marginX;
 int marginY;
+
+int maxLines;
+int maxLetters;
 
 boolean loadConfig() {
 
@@ -40,19 +44,27 @@ boolean loadConfig() {
 
 
     charSize=config.getInt("charSize", 20);
+
     charSpace=config.getInt("charSpace", 10);
-    
     wordSpace=config.getInt("wordSpace", 50);
-    
+    lineSpace=config.getInt("lineSpace", 50);
+
     marginX=config.getInt("marginX", 100);
     marginY=config.getInt("marginY", 100);
-    println(marginX);
 
     return false;
   } else {
     //deLog(err, cona, "Unable to load -config.xml- file. Program can't run without this. Please check documentation.");
     return true;
   }//end else
+}
+
+void calcConfig() {
+  int safeY=height-2*marginY;
+  println("Safe Height:  "+safeY);
+
+  int safeX=width-2*marginX;
+  println("Safe Width:  "+safeX);
 }
 
 void winSetup() {
