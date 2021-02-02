@@ -97,7 +97,7 @@ class Boid {
     float theta = velocity.heading2D() + radians(90);
     pushMatrix();
     translate(position.x, position.y);
-    //rotate(theta);
+    rotate(theta*freedom);
     text(letter, 0, 0, 0);
     popMatrix();
   }

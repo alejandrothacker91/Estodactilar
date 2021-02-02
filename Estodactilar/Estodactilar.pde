@@ -1,5 +1,8 @@
 ArrayList<Line> Lines = new ArrayList<Line>();
 Flock flock;
+
+float freedom=1.0;
+
 void settings() {
   loadConfig();
   setWindow();
@@ -15,9 +18,15 @@ void setup() {
 }
 
 void draw() {
+  updateFreedom();
   background(0);
   dispLines();
   flock.run();
+}
+
+void updateFreedom() {
+  freedom=map(mouseX, marginX, width-marginX, 0.0, 1.0);
+  freedom=constrain(freedom, 0.0, 1.0);
 }
 
 void setWindow() {
