@@ -9,6 +9,13 @@ class Letter {
     acter=input;
     //print(acter);
   }
-  void update() {
+  Letter (int x, int y, char input) {
+    letX=x;
+    letY=y;
+    acter=input;
+    //print(acter);
+  }
+  void display() {
+    ellipse(letX, letY, charSize, charSize);
   }
 } 
