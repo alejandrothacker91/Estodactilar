@@ -1,11 +1,13 @@
 ArrayList<Line> Lines = new ArrayList<Line>();
-
+Flock flock;
 void settings() {
   loadConfig();
   setWindow();
 }
 
 void setup() {
+
+  flock = new Flock();
   winSetup();
   calcConfig();
   setupFont();
