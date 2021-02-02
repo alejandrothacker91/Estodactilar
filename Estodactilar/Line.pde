@@ -34,8 +34,10 @@ class Line {
     //printArray(wordArray);
 
     int charCount=0;
+
     for (int i=0; i<wordArray.length; i++) {
-      Words.add(new Word(lineX+charCount, lineY, wordArray[i]));
+      Words.add(new Word(lineX+charCount*charSize+charSpace, lineY, wordArray[i]));
+      charCount+=wordArray[i].length();
     }
   }
   void display() {
