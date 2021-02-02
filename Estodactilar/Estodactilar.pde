@@ -17,6 +17,7 @@ void setup() {
 void draw() {
   background(0);
   dispLines();
+  flock.run();
 }
 
 void setWindow() {

@@ -17,7 +17,6 @@ class Letter {
     flock.addBoid(new Boid(x, y, acter));
   }
   void display() {
-    //ellipse(letX, letY, charSize, charSize);
     pushMatrix();
     translate(letX, letY, 0);
     text(acter, 0, 0, 0);
